@@ -1,0 +1,33 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "C/C++: g++ build pipes4da.cpp",
+            "type": "shell",
+            "command": "/usr/bin/g++",
+            "args": [
+                "-std=c++17", 
+                "-g", 
+                "pipes4da.cpp",
+                "-o", 
+                "${fileDirname}/pipes4da"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"],
+            "detail": "Generated task for building pipes4da.cpp"
+        },
+        {
+            "label": "Run pipes4da program",
+            "type": "shell",
+            "command": "${fileDirname}/pipes4da",
+            "dependsOn": "C/C++: g++ build pipes4da.cpp",
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            }
+        }
+    ]
+}
